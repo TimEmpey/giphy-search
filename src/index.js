@@ -6,7 +6,7 @@ import './css/styles.css';
 function getSearch(keyword) {
   let requestSearch = new XMLHttpRequest();
   console.log(keyword);
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=yxz9s2clvyAa3M7ajxUmlHiWe6A8p4US&q=${keyword}&limit=20&offset=0&rating=r&lang=en`;
+  const url = `https://api.giphy.com/v1/gifs/search?api_key=yxz9s2clvyAa3M7ajxUmlHiWe6A8p4US&q=${keyword}&limit=50&offset=0&rating=r&lang=en`;
 
   requestSearch.addEventListener("loadend", function() {
     const responseSearch = JSON.parse(this.responseText);
@@ -21,7 +21,7 @@ function getSearch(keyword) {
 // UI Logic
 
 function printElements(apiResponse, keyword) {
-  document.getElementById("gifResult").setAttribute("src", apiResponse.data[Math.floor(Math.random() * 20)].images.original.url);
+  document.getElementById("gifResult").setAttribute("src", apiResponse.data[Math.floor(Math.random() * 50)].images.original.url);
   document.getElementById("keywordOutput").innerText = `Keyword: ${keyword}`;
 }
 
