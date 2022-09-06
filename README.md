@@ -1,4 +1,4 @@
-# _Template_
+# _Giphy Search_
 
 #### By _**Tim Empey**_
 
